@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OtpForm /> renders <OtpForm /> with populated data 1`] = `
+<div
+  class="sc-bdvvtL TjGcK"
+>
+  <input
+    class="sc-hKwDye ktAsxR"
+    placeholder="Email Address"
+  />
+  <button
+    class="sc-gsDKAQ dejLHC"
+  >
+    Try it now
+    <img
+      alt="Try Now"
+      src="/images/icons/chevron-right.png"
+    />
+  </button>
+  <div
+    class="sc-eCImPb jCGStq"
+  />
+  <p
+    class="sc-dkPtRN gxdhRg"
+  >
+    Ready to watch?
+  </p>
+</div>
+`;
