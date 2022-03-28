@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect, Routes } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import * as ROUTES from '../constants/routes';
 export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
   return (

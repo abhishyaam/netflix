@@ -23,33 +23,24 @@ export default function BrowseContainer({ slides }) {
   const user = firebase.auth().currentUser || {};
 
   useEffect(() => {
-    console.log('profile', profile);
     setTimeout(() => setLoading(false), 3000);
   }, [profile.displayName]);
 
   useEffect(() => {
-    {
-      if (timerId > 0) {
-        clearTimeout(timerId);
-      }
-      timerId = setTimeout(() => {
-        {
-          //debounced search
-          const fuse = new Fuse(slideRows, {
-            keys: ['data.description', 'data.title', 'data.genre '],
-          });
-          const result = fuse.search(searchTerm).map(({ item }) => item);
-          if (
-            slideRows.length > 0 &&
-            searchTerm.length > 3 &&
-            result.length > 0
-          ) {
-            setSlideRows(result);
-          } else setSlideRows(slides[category]);
-        }
-      }, 100);
+    if (timerId > 0) {
+      clearTimeout(timerId);
     }
-  }, [searchTerm]);
+    timerId = setTimeout(() => {
+      //debounced search
+      const fuse = new Fuse(slideRows, {
+        keys: ['data.description', 'data.title', 'data.genre '],
+      });
+      const result = fuse.search(searchTerm).map(({ item }) => item);
+      if (slideRows.length > 0 && searchTerm.length > 3 && result.length > 0) {
+        setSlideRows(result);
+      } else setSlideRows(slides[category]);
+    }, 100);
+  }, [searchTerm, category, slideRows, slides]);
 
   useEffect(() => {
     setSlideRows(slides[category]);

@@ -1,5 +1,4 @@
 import React, { useState, useContext, createContext } from 'react';
-import ReactDOM from 'react-dom';
 
 import { Container, Button, Overlay, Inner, Close } from './styles/player';
 
@@ -30,7 +29,7 @@ Player.Video = function PlayerVideo({ src, ...restProps }) {
 };
 
 Player.Button = function PlayerButton({ ...restProps }) {
-  const { showPlayer, setShowPlayer } = useContext(PlayerContext);
+  const { setShowPlayer } = useContext(PlayerContext);
 
   return <Button onClick={() => setShowPlayer(true)}>Play</Button>;
 };

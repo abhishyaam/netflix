@@ -19,7 +19,7 @@ export default function useContent(target) {
         setContent(allContent);
       })
       .catch((err) => console.log(err));
-  }, []);
+  });
 
   return { [target]: content };
 }
