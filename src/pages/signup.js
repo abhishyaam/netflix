@@ -74,7 +74,9 @@ export default function Signup() {
 
           <Form.Text>
             Aleardy a user?{' '}
-            <Form.Link to={ROUTES.SIGNIN}>Sign In Now</Form.Link>
+            <Form.Link to={ROUTES.SIGNIN} data-testid='signup'>
+              Sign In Now
+            </Form.Link>
           </Form.Text>
           <Form.TextSmall>
             This page is protected by Google reCAPTCHA to ensure you're not a
